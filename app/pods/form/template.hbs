@@ -1,0 +1,24 @@
+<div class='route-form'>
+  <div class='route-form-questions'>
+    {{#each questionsArr as |line lineIndex|}}
+      <p>
+        {{#each line as |question questionIndex|}}
+          <label>
+            <input
+              type="radio"
+              name={{lineIndex}}
+              value={{questionIndex}}
+              onchange={{action 'answer' lineIndex questionIndex}}
+            >
+            <span>{{question}}</span>
+          </label>
+        {{/each}}{{! line }}
+      </p>
+    {{/each}}{{! questionsArr }}
+  </div>{{! questions }}
+
+  <div class='route-form-content'>
+    {{answer}}
+  </div>{{! content }}
+</div>
+

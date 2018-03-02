@@ -1,27 +1,28 @@
-'use strict';
+'use strict'
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'ember-questions',
+    modulePrefix    : 'ember-questions',
+    podModulePrefix : 'ember-questions/pods',
     environment,
-    rootURL: '/',
-    locationType: 'auto',
-    EmberENV: {
-      FEATURES: {
+    rootURL         : '/',
+    locationType    : 'hash',
+    EmberENV        : {
+      FEATURES : {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       },
-      EXTEND_PROTOTYPES: {
+      EXTEND_PROTOTYPES : {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
-      }
+        Date : false,
+      },
     },
 
-    APP: {
+    APP : {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
-  };
+    },
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -33,19 +34,20 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.locationType = 'none';
+    ENV.locationType = 'none'
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+    ENV.APP.LOG_ACTIVE_GENERATION = false
+    ENV.APP.LOG_VIEW_LOOKUPS = false
 
-    ENV.APP.rootElement = '#ember-testing';
-    ENV.APP.autoboot = false;
+    ENV.APP.rootElement = '#ember-testing'
+    ENV.APP.autoboot = false
   }
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.rootURL = '/ember-questions'
   }
 
-  return ENV;
-};
+  return ENV
+}
