@@ -1,57 +1,41 @@
 # ember-questions
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Для начала зарегистрируйся на этом сайте: https://github.com
 
-## Prerequisites
+После этого заходишь сюда и создаешь контент с вопросами и ответами: https://gist.github.com/
 
-You will need the following things properly installed on your computer.
+Вот образец правильно заполненного контента: https://gist.github.com/lolmaus/5296aa75527ecf073888d43ea1286ffc
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [Yarn](https://yarnpkg.com/)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+На что тут нужно обратить внимание:
 
-## Installation
+На этом сайте можно создать набор файлов. Один такой набор у нас будет соответствовать одному опроснику. Набор будет содержать один файл с вопросами-ответами и множество файлов с текстами -- по одному на каждое сочетание вопросов-ответов.
 
-* `git clone <repository-url>` this repository
-* `cd ember-questions`
-* `yarn install`
+Внизу файл "questions" — в нем перечисляются вопросы. Каждая строка — один вопрос. Варианты ответов разделяются запятой. Пример:
 
-## Running / Development
+    Мужчина, Женщина
+    Москва, Красногорск
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+Здесь описано два вопроса, и у каждого по два варианта ответов. Ссылаться на вопросы и ответы мы будем по номерам. Так, выбор пола -- это вопрос 1, а города -- вопрос 2.
 
-### Code Generators
+`Мужчина` -- это ответ 1 вопроса 1, а `Женщина` -- это ответ 2 вопроса 1.
 
-Make use of the many generators for code, try `ember help generate` for more details
+Дальше для каждого возможного сочетания ответов ты создаешь файл с текстом.
 
-### Running Tests
+Имя файла должно соответствовать сочетанию ответов. Оно состоит из номеров ответов, разделенных дефисами.
 
-* `ember test`
-* `ember test --server`
+Например, файл с именем `3-12-4` означает, что на первый вопрос был дан третий ответ, на второй вопрос дан двенадцатый ответ, на третий вопрос дан четвертый ответ.
 
-### Linting
+Файлов с текстами должно быть ровно столько, сколько возможно вариантов ответов.
 
-* `yarn lint:js`
-* `yarn lint:js --fix`
+Когда всё написала, сохраняешь результат нажатием на Create Secret Gist, ему приваивается адрес страницы такого вида:
+https://gist.github.com/lolmaus/5296aa75527ecf073888d43ea1286ffc
 
-### Building
+Из этого адреса ты копируешь длинный номер и вставляешь его в адрес приложения вместо слова NUMBER:
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+https://lolmaus.github.io/ember-questions/#/NUMBER
 
-### Deploying
+В результате должна получиться такая ссылка:
 
-Specify what it takes to deploy your app.
+https://lolmaus.github.io/ember-questions/#/5296aa75527ecf073888d43ea1286ffc
 
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+По этой ссылке будет твой интерактивный опросник. Если ты все правильно сделала, то должно работать. )
